@@ -1,0 +1,39 @@
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#titleLogin {
+  text-align: center;
+  font-weight: 500;
+  font-size: xx-large;
+}
+#formContainer {
+  border: 1px solid black;
+  padding: 5%;
+}
+#username,
+#password,
+#submit {
+  display: flex;
+  justify-content: center;
+  margin: 10% 0%;
+  width: 100%;
+}
+#inputUsername,
+#inputPassword {
+  padding: 4%;
+  width: 100%;
+}
+
+#inputSubmit {
+  padding: 1%;
+  width: 100%;
+  background-color: white;
+}
+
+#inputSubmit:hover {
+  cursor: pointer;
+  color: grey;
+}

@@ -1,0 +1,14 @@
+Anmol Singh
+Backend and some of Frontend
+- Creating database and tables
+- MySQL queries
+- Login page and signup page and connecting them to the database
+- POST and GET requests
+- Helping with some of the functionalities on Frontend
+
+Mingzan Liu
+Frontend
+- Displaying the main game on the screen
+- Game logic and the functionalities like restart and deciding the winner
+- CSS for the pages
+- Displaying the queried results from the database like leaderboard
