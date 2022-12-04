@@ -144,7 +144,8 @@ body {
 #option1Container,
 #helpContainer,
 #contactContainer,
-#outterLeaderBoardContainer {
+#outterLeaderBoardContainer,
+#outterusergamesContainer {
   display: none;
   position: fixed;
   left: 0;
@@ -169,6 +170,7 @@ body {
 #option3 {
   display: flex;
   margin: 20px 0px;
+  justify-content: center;
 }
 #startContainer {
   position: relative;
@@ -262,7 +264,8 @@ p {
 
 /* ---------------------------------- */
 
-#innerLeaderBoardContainer {
+#innerLeaderBoardContainer,
+#innerusergamesContainer {
   margin-top: 5%;
   text-align: center;
   width: 70%;
@@ -275,6 +278,7 @@ p {
 .trow,
 .theadRow {
   display: flex;
+  justify-content: center;
 }
 .tdata {
   width: 20%;
@@ -296,7 +300,8 @@ p {
   background-color: #cc0033c6;
   cursor: pointer;
 }
-#outterLeaderBoardContainerButton {
+#outterLeaderBoardContainerButton,
+#outterusergamesContainerButton {
   margin-top: 5%;
   height: 5%;
   font-family: "Press Start 2P", cursive;
@@ -324,6 +329,22 @@ p {
   right: 25%;
   background-color: #00235d;
 }
+
+#titleUB {
+  text-align: center;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: xx-large;
+  border: 3px solid white;
+  position: absolute;
+  top: 2%;
+  bottom: 90%;
+  left: 25%;
+  right: 25%;
+  background-color: #00235d;
+  z-index: 3;
+}
+
 /* ContactLIst */
 
 #contactList {
@@ -331,4 +352,9 @@ p {
 }
 #titleContact {
   text-align: center;
+}
+
+/* usergames */
+#username:hover {
+  cursor: pointer;
 }

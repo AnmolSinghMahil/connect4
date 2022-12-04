@@ -18,7 +18,7 @@
 #submit {
   display: flex;
   justify-content: center;
-  margin: 10% 0%;
+  margin-top: 8%;
   width: 100%;
 }
 #inputUsername,
@@ -37,4 +37,8 @@
 #inputSubmit:hover {
   cursor: pointer;
   color: rgba(128, 128, 128, 0.598);
+}
+
+#errors {
+  color: red;
 }

@@ -88,12 +88,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div id="centerInputs">
             <div  id="username" <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>>
                 <input id="inputUsername" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
-                <span><?php echo $username_err; ?></span>
             </div>    
+            <span id="errors"><?php echo $username_err; ?></span>
             <div id="password" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <input id="inputPassword" type="password" name="password" placeholder="Password" >
-                <span><?php echo $password_err; ?></span>
             </div>
+            <span id="errors"><?php echo $password_err; ?></span>
             <div id="submit">
                 <input id="inputSubmit" type="submit" value="Login">
             </div>

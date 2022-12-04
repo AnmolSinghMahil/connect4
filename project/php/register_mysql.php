@@ -102,18 +102,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div id="username" <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <!-- <label>Username:<sup>*</sup></label> -->
                 <input id="inputUsername"type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
-                <div><?php echo $username_err; ?></div>
             </div>    
+            <div id="errors"><?php echo $username_err; ?></div>
             <div id="password"<?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <!-- <label>Password:<sup>*</sup></label> -->
                 <input id="inputPassword" type="password" name="password" placeholder="Password" value="<?php echo $password; ?>">
-                <span><?php echo $password_err; ?></span>
             </div>
+            <span id="errors"><?php echo $password_err; ?></span>
             <div id="password" <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                 <!-- <label>Confirm Password:<sup>*</sup></label> -->
                 <input id="inputPassword" type="password" name="confirm_password" placeholder="Confirm password" value="<?php echo $confirm_password; ?>">
-                <span><?php echo $confirm_password_err; ?></span>
             </div>
+            <span id="errors"><?php echo $confirm_password_err; ?></span>
             <div id="submit">
                 <input id="inputSubmit" type="submit" value="Submit">
                 <input id="inputSubmit" type="reset"  value="Reset">

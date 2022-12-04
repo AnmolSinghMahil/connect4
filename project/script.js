@@ -1,5 +1,6 @@
 //initialize
 let data;
+let usergamesdata;
 let player1Discs;
 let player2Discs;
 let currentTurn = 0;
@@ -75,6 +76,22 @@ startTimer = () => {
 let hiddenValue = document.getElementById("hidden").innerHTML;
 let resultPost = "";
 let timePlayedPost = "";
+
+//////////////////////////////////////
+let userName = document.getElementById("username");
+let outterusergamesContainer = document.getElementById(
+  "outterusergamesContainer"
+);
+let outterusergamesContainerClose = document.getElementById(
+  "outterusergamesContainerButton"
+);
+let innerusergamesContainer = document.getElementById(
+  "innerusergamesContainer"
+);
+
+outterusergamesContainerClose.addEventListener("click", () => {
+  outterusergamesContainer.style.display = "none";
+});
 
 // let post = { userID: hiddenValue, result: "", timePlayed: "" };
 // console.log(post);
@@ -238,7 +255,7 @@ const selectColor = () => {
 ////////////////////////////////////////////////////////////////////////////
 /// Post result
 
-var httprequest;
+let httprequest;
 
 // let postResult = () => {
 //   httprequest = new XMLHttpRequest();
@@ -256,6 +273,39 @@ var httprequest;
 //   );
 //   httprequest.send(sendPost);
 // };
+
+let userGames = () => {
+  httpRequest = new XMLHttpRequest();
+  if (!httpRequest) {
+    alert("Cannot create an XMLHTTP instance");
+    return false;
+  }
+  httpRequest.onreadystatechange = getUserGamesServer;
+  v1 = JSON.stringify(hiddenValue);
+  httpRequest.open("GET", "getUsers.php?userID=" + v1);
+  httpRequest.send(); // Post = send with parameter !
+};
+
+userName.addEventListener("click", () => {
+  userGames();
+  outterusergamesContainer.style.display = "flex";
+});
+let getUserGamesServer = () => {
+  try {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpRequest.status === 200) {
+        let str = httpRequest.responseText;
+        usergamesdata = JSON.parse(str);
+        resetLB();
+        displayUsergames();
+
+        // displayLeaderboard();
+      }
+    }
+  } catch (e) {
+    alert("Caught Exception: " + e.description);
+  }
+};
 
 let insertItem = () => {
   httpRequest = new XMLHttpRequest();
@@ -456,6 +506,31 @@ let displayLeaderboard = () => {
   }
 };
 
+let displayUsergames = () => {
+  let n = usergamesdata.length;
+  console.log(usergamesdata);
+  usergamesdata.map((item) => {
+    let tr = document.createElement("div");
+    tr.setAttribute("class", "trow");
+    let td1 = document.createElement("div");
+    td1.setAttribute("class", "tdata");
+    let td2 = document.createElement("div");
+    td2.setAttribute("class", "tdata");
+    let td3 = document.createElement("div");
+    td3.setAttribute("class", "tdata");
+
+    innerusergamesContainer.appendChild(tr);
+    td1.innerHTML = item.gamesID;
+    tr.appendChild(td1);
+    td2.innerHTML = item.result;
+    tr.appendChild(td2);
+    td3.innerHTML = item.timeplayed.slice(0, 8);
+    console.log(item.timeplayed);
+    tr.appendChild(td3);
+  });
+  // console.log(n);
+  // console.log(item[0].gamesID);
+};
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 

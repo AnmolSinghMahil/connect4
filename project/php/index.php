@@ -31,7 +31,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
     <nav>
       <div id="navBar">
         <div id="logo">Connect 4</div>
-        <div><?php echo $_SESSION['username']; ?></div>
+        <div id="username"><?php echo $_SESSION['username']; ?></div>
         <div id="hidden" style="display:none"><?php echo $_SESSION["userID"]?></div>
         <div id="setLog">
           <div id="settings">
@@ -195,9 +195,23 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
         </div>
 
         <div id="innerTableContainer" class="boardColor"></div>
-</div>
+        </div>
       </div>
     </section>
+    <section id="usergamesSection">
+        <div id="outterusergamesContainer">
+        <div id="titleUB" >User game history </div>
+          <div id="innerusergamesContainer">
+            <div class="theadRow">
+              <div id="gamesUG"class="thead"> gamesID</div> 
+              <div id="resultUG" class="thead"> Result</div> 
+              <div id="timeplayedUG" class="thead">TP</div> 
+            </div>
+          </div>
+            <button class="button" id="outterusergamesContainerButton">X</button>
+          </div>      
+
+      </section>
     <script src="../script.js"></script>
   </body>
 </html>
